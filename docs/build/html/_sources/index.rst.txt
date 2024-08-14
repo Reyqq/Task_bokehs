@@ -26,8 +26,9 @@ Overview
    :caption: Основные разделы:
 
    introduction
-   functions_overview
-   bokehs1
+   usage
+   api_reference/index
+
 
 
 

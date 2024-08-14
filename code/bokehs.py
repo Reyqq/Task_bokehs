@@ -1,3 +1,16 @@
+"""
+Модуль bokehs предоставляет набор функций для создания и настройки финансовых графиков
+с использованием библиотеки Bokeh.
+
+Основные функции:
+- create_data_sources: Подготовка данных для свечных графиков
+- create_candlestick_chart: Создание базового свечного графика
+- style_plot: Настройка стиля графика
+"""
+
+
+
+
 import bokeh.plotting
 from bokeh.plotting import figure, show, ColumnDataSource
 from bokeh.models import Span, LabelSet, HoverTool, Slider, DatePicker, Toggle, CrosshairTool, FreehandDrawTool

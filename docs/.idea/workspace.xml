@@ -65,6 +65,18 @@
       <change afterPath="$PROJECT_DIR$/_static/sphinx_highlight.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/_static/translations.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bokehs1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/api_reference/bokehs1.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/api_reference/functions_overview.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/api_reference/index.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/usage.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/api_reference/bokehs1.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/api_reference/functions_overview.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/api_reference/index.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/usage.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/api_reference/bokehs1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/api_reference/functions_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/api_reference/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/usage.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/functions_overview.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/genindex.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -73,6 +85,11 @@
       <change afterPath="$PROJECT_DIR$/py-modindex.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/searchindex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/api_reference/bokehs1.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/api_reference/functions_overview.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/api_reference/index.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/usage.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/bokehs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../code/bokehs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +97,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -96,16 +116,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

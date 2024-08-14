@@ -49,8 +49,7 @@
               <p class="caption" role="heading"><span class="caption-text">Основные разделы:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. Введение</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../functions_overview.html">2. Обзор функций</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bokehs1.html">3. API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. Использование библиотеки</a></li>
 </ul>
 
         </div>
@@ -78,7 +77,20 @@
            <div itemprop="articleBody">
              
   <h1>Исходный код bokehs</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">bokeh.plotting</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Модуль bokehs предоставляет набор функций для создания и настройки финансовых графиков</span>
+<span class="sd">с использованием библиотеки Bokeh.</span>
+
+<span class="sd">Основные функции:</span>
+<span class="sd">- create_data_sources: Подготовка данных для свечных графиков</span>
+<span class="sd">- create_candlestick_chart: Создание базового свечного графика</span>
+<span class="sd">- style_plot: Настройка стиля графика</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+
+
+<span class="kn">import</span> <span class="nn">bokeh.plotting</span>
 <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">ColumnDataSource</span>
 <span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">Span</span><span class="p">,</span> <span class="n">LabelSet</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Slider</span><span class="p">,</span> <span class="n">DatePicker</span><span class="p">,</span> <span class="n">Toggle</span><span class="p">,</span> <span class="n">CrosshairTool</span><span class="p">,</span> <span class="n">FreehandDrawTool</span>
 <span class="kn">from</span> <span class="nn">bokeh.layouts</span> <span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">row</span>
@@ -90,7 +102,7 @@
 
 
 <div class="viewcode-block" id="customize_plot_styles">
-<a class="viewcode-back" href="../bokehs1.html#bokehs.customize_plot_styles">[документация]</a>
+<a class="viewcode-back" href="../api_reference/bokehs1.html#bokehs.customize_plot_styles">[документация]</a>
 <span class="k">def</span> <span class="nf">customize_plot_styles</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">figure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. :no-index:</span>
@@ -152,7 +164,7 @@
 
 
 <div class="viewcode-block" id="create_data_sources">
-<a class="viewcode-back" href="../bokehs1.html#bokehs.create_data_sources">[документация]</a>
+<a class="viewcode-back" href="../api_reference/bokehs1.html#bokehs.create_data_sources">[документация]</a>
 <span class="k">def</span> <span class="nf">create_data_sources</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. :no-index:</span>
@@ -205,7 +217,7 @@
 
 
 <div class="viewcode-block" id="process_positions">
-<a class="viewcode-back" href="../bokehs1.html#bokehs.process_positions">[документация]</a>
+<a class="viewcode-back" href="../api_reference/bokehs1.html#bokehs.process_positions">[документация]</a>
 <span class="k">def</span> <span class="nf">process_positions</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
                       <span class="n">positions_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">open_position_timestamps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -298,7 +310,7 @@
 
 
 <div class="viewcode-block" id="create_markers_data">
-<a class="viewcode-back" href="../bokehs1.html#bokehs.create_markers_data">[документация]</a>
+<a class="viewcode-back" href="../api_reference/bokehs1.html#bokehs.create_markers_data">[документация]</a>
 <span class="k">def</span> <span class="nf">create_markers_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
     <span class="n">indices_buy</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>

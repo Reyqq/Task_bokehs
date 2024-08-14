@@ -43,7 +43,7 @@ extensions = [
 
 
 source_encoding = 'utf-8-sig'
-
+autodoc_member_order = 'bysource'
 
 templates_path = ['_templates']
 exclude_patterns = []
