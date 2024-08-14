@@ -71,7 +71,7 @@ sphinx-autobuild docs/source docs/build/html
 
 ## Ссылка на документацию
 
-Документацию по коду с помощью sphinx можно посмотреть здесь: https://reyqq.github.io/Bokeh_tasks/
+Документацию по коду с помощью sphinx можно посмотреть здесь: https://reyqq.github.io/Task_bokehs/
 
 
 
