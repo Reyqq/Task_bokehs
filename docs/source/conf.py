@@ -42,6 +42,7 @@ extensions = [
 ]
 
 
+autosectionlabel_prefix_document = True
 source_encoding = 'utf-8-sig'
 autodoc_member_order = 'bysource'
 
@@ -57,12 +58,14 @@ html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
     'logo_only': False,
-    'collapse_navigation': True,
+    'collapse_navigation': False,
     'sticky_navigation': True,
     'includehidden': True,
     'navigation_depth': 4,
     'titles_only': False,
     'style_nav_header_background': '#343131',
 }
+
+master_doc = 'index'
 
 html_static_path = ['_static']
