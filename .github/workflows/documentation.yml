@@ -14,13 +14,10 @@ jobs:
       - uses: actions/setup-python@v5
       - name: Install dependencies
         run: |
-          pip install sphinx 
-          pip install sphinx_rtd_theme
-          pip install bokeh
-          pip install sphinx-copybutton
+          pip install sphinx sphinx_rtd_theme  bokeh sphinx-copybutton
       - name: Sphinx build
         run: |
-          sphinx docs/source docs/
+          python -m sphinx docs/source docs/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
