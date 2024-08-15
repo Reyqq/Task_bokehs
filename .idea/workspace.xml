@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b1a10bc-cb30-448a-8783-f398e1a3e3fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.buildinfo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/api_reference/bokehs1.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/api_reference/functions_overview.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/api_reference/index.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/bokehs1.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/environment.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/functions_overview.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/index.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/introduction.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.doctrees/usage.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.nojekyll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_images/photo_2019-12-02_13-45-56.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_modules/bokehs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_modules/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/api_reference/bokehs1.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/api_reference/functions_overview.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/api_reference/index.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/bokehs1.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/functions_overview.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/index.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/introduction.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sources/usage.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/_sphinx_javascript_frameworks_compat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/base-stemmer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/basic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/check-solid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/clipboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/copy-button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/copybutton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/copybutton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/copybutton_funcs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/badge_only.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/Roboto-Slab-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/Roboto-Slab-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/Roboto-Slab-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/Roboto-Slab-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-bold-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-bold-italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-normal-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-normal-italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-normal.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/fonts/lato-normal.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/css/theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/doctools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/documentation_options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/file.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/js/badge_only.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/js/html5shiv-printshiv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/js/html5shiv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/js/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/language_data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/minus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/pygments.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/russian-stemmer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/saitama.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/searchtools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/sphinx_highlight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_static/translations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_reference/bokehs1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_reference/functions_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_reference/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bokehs1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/api_reference/bokehs1.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/api_reference/functions_overview.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/api_reference/index.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/.doctrees/usage.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/api_reference/bokehs1.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/api_reference/functions_overview.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/api_reference/index.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/usage.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/api_reference/bokehs1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/api_reference/functions_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/api_reference/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/usage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genindex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/introduction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects.inv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py-modindex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/searchindex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/api_reference/bokehs1.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/api_reference/functions_overview.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/api_reference/index.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/usage.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usage.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2keEAnWvlOzhF1q8UhjUcxbK3Qh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b1a10bc-cb30-448a-8783-f398e1a3e3fe" name="Changes" comment="" />
+      <created>1723635500498</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723635500498</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
