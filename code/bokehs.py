@@ -8,18 +8,11 @@
 - style_plot: Настройка стиля графика
 """
 
+from typing import Optional, List, Tuple, Dict, Any
 
-
-
-import bokeh.plotting
-from bokeh.plotting import figure, show, ColumnDataSource
-from bokeh.models import Span, LabelSet, HoverTool, Slider, DatePicker, Toggle, CrosshairTool, FreehandDrawTool
-from bokeh.layouts import column, row
-from bokeh.models.formatters import DatetimeTickFormatter
-from bokeh.models.callbacks import CustomJS
-import pandas as pd
 import numpy as np
-from typing import Optional, List, Union, Tuple, Dict, Any
+import pandas as pd
+from bokeh.plotting import figure, ColumnDataSource
 
 
 def customize_plot_styles(p: figure) -> None:
@@ -131,49 +124,57 @@ def create_data_sources(df: pd.DataFrame) -> Tuple[pd.DataFrame, ColumnDataSourc
     return df, df_inc, df_dec, df_source
 
 
-def process_positions(df: pd.DataFrame,
-                      positions_df: Optional[pd.DataFrame] = None,
-                      open_position_timestamps: Optional[List[int]] = None,
-                      close_position_timestamps: Optional[List[int]] = None,
-                      stop_losses: Optional[List[float]] = None,
-                      marker_sell_stop_color: str='red',
-                      marker_sell_color: str='green'):
+def process_positions(
+        df: pd.DataFrame,
+        positions_df: Optional[pd.DataFrame] = None,
+        open_position_timestamps: Optional[List[int]] = None,
+        close_position_timestamps: Optional[List[int]] = None,
+        stop_losses: Optional[List[float]] = None,
+        marker_sell_stop_color: str = 'red',
+        marker_sell_color: str = 'green'
+) -> Tuple[
+    List[int], List[Tuple[Optional[int], str]], List[int], List[Optional[float]], List[float], List[Optional[float]]]:
     """
     .. :no-index:
 
-    Функция для обработки позиций и создания источников данных для графиков.
+    Обрабатывает позиции и создает источники данных для графиков.
 
-    :param df: Датафрейм с данными.
-    :type df: pandas.DataFrame
-    :param positions_df: Датафрейм с позициями.
-    :type positions_df: Optional[pandas.DataFrame]
-    :param open_position_timestamps: Список временных меток открытия позиций.
-    :type open_position_timestamps: Optional[List[int]]
-    :param close_position_timestamps: Список временных меток закрытия позиций.
-    :type close_position_timestamps: Optional[List[int]]
-    :param stop_losses: Список стоп-лоссов.
-    :type stop_losses: Optional[List[float]]
-    :param marker_sell_stop_color: Цвет маркера для позиций с достижением стоп-лосса.
-    :type marker_sell_stop_color: str
-    :param marker_sell_color: Цвет маркера для обычных позиций.
-    :type marker_sell_color: str
-    :return: Кортеж с индексами покупок, продаж и другой информацией по позициям.
-    :rtype: tuple(List[int], List[tuple], List[int], List[float], List[float], List[float])
+    Args:
+        df (pd.DataFrame): Датафрейм с данными.
+        positions_df (Optional[pd.DataFrame]): Датафрейм с позициями. По умолчанию None.
+        open_position_timestamps (Optional[List[int]]): Список временных меток открытия позиций. По умолчанию None.
+        close_position_timestamps (Optional[List[int]]): Список временных меток закрытия позиций. По умолчанию None.
+        stop_losses (Optional[List[float]]): Список стоп-лоссов. По умолчанию None.
+        marker_sell_stop_color (str): Цвет маркера для позиций с достижением стоп-лосса. По умолчанию 'red'.
+        marker_sell_color (str): Цвет маркера для обычных позиций. По умолчанию 'green'.
+
+    Returns:
+        Tuple[List[int], List[Tuple[Optional[int], str]], List[int], List[Optional[float]], List[float], List[Optional[float]]]:
+        Кортеж, содержащий:
+        - Индексы покупок
+        - Кортежи с индексами продаж и цветами маркеров
+        - Количество свечей в сделке
+        - Процентные изменения
+        - Цены открытия
+        - Цены закрытия
+
+    Raises:
+        ValueError: Если не предоставлены необходимые данные о позициях.
     """
 
-    if positions_df is not None:
-        required_position_columns = ['open_position_timestamp', 'close_position_timestamp', 'stop_loss']
-        for col in required_position_columns:
-            if col not in positions_df.columns:
-                raise ValueError(f"DataFrame с метками позиций должен содержать столбец '{col}'")
-    else:
-        if open_position_timestamps is None or close_position_timestamps is None or stop_losses is None:
-            raise ValueError("Необходимо передать либо positions_df, либо списки open_position_timestamps, close_position_timestamps и stop_losses")
+    if positions_df is None:
+        if any(arg is None for arg in [open_position_timestamps, close_position_timestamps, stop_losses]):
+            raise ValueError(
+                "Необходимо передать либо positions_df, либо все списки: open_position_timestamps, close_position_timestamps и stop_losses")
         positions_df = pd.DataFrame({
             'open_position_timestamp': open_position_timestamps,
             'close_position_timestamp': close_position_timestamps,
             'stop_loss': stop_losses
         })
+    else:
+        required_columns = ['open_position_timestamp', 'close_position_timestamp', 'stop_loss']
+        if not all(col in positions_df.columns for col in required_columns):
+            raise ValueError(f"DataFrame с метками позиций должен содержать столбцы: {', '.join(required_columns)}")
 
     positions_df['open_position_timestamp'] = pd.to_datetime(positions_df['open_position_timestamp'], unit='s')
     positions_df['close_position_timestamp'] = pd.to_datetime(positions_df['close_position_timestamp'], unit='s')
@@ -181,24 +182,21 @@ def process_positions(df: pd.DataFrame,
     indices_buy = df.index[df['datetime'].isin(positions_df['open_position_timestamp'])].tolist()
     indices_sell = df.index[df['datetime'].isin(positions_df['close_position_timestamp'])].tolist()
 
-    num_candles_in_trade = []
-    adjusted_sell_indices = []
-    percent_moves = []
-    open_prices = []
-    close_prices = []
+    num_candles_in_trade: List[int] = []
+    adjusted_sell_indices: List[Tuple[Optional[int], str]] = []
+    percent_moves: List[Optional[float]] = []
+    open_prices: List[float] = []
+    close_prices: List[Optional[float]] = []
 
     for i, buy_idx in enumerate(indices_buy):
         if i < len(indices_sell):
             sell_idx = indices_sell[i]
             stop_loss = positions_df['stop_loss'].iloc[i]
+
             if stop_loss is not None:
-                stop_loss_hit = False
-                for j in range(buy_idx, sell_idx):
-                    if df['close'].iloc[j] < stop_loss:
-                        sell_idx = j
-                        stop_loss_hit = True
-                        break
+                stop_loss_hit = any(df['close'].iloc[j] < stop_loss for j in range(buy_idx, sell_idx))
                 if stop_loss_hit:
+                    sell_idx = next(j for j in range(buy_idx, sell_idx) if df['close'].iloc[j] < stop_loss)
                     color = marker_sell_stop_color
                 else:
                     color = marker_sell_color
