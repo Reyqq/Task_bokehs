@@ -296,6 +296,404 @@
 </dl>
 </dd></dl>
 
+      <dl class="py function">
+          <dt class="sig sig-object py" id="bokehs.plot_trading_signals">
+              <span class="sig-prename descclassname"><span class="pre">bokehs.</span></span><span
+                  class="sig-name descname"><span class="pre">plot_trading_signals</span></span><span class="sig-paren">(</span><em
+                  class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em
+                  class="sig-param"><span class="n"><span class="pre">positions_df</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                  class="pre">DataFrame</span><span class="w"> </span><span class="p"><span
+                  class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">open_position_timestamps</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span
+                  class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span
+                  class="pre">]</span></span><span class="w"> </span><span class="p"><span
+                  class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">close_position_timestamps</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span
+                  class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span
+                  class="pre">]</span></span><span class="w"> </span><span class="p"><span
+                  class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">stop_losses</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span
+                  class="pre">[</span></span><span class="pre">float</span><span class="p"><span
+                  class="pre">]</span></span><span class="w"> </span><span class="p"><span
+                  class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">distance_buy</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">distance_sell</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">marker_buy_color</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'blue'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">marker_sell_color</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">'green'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_sell_stop_color</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'red'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">buy_marker</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'triangle'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">sell_marker</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">'inverted_triangle'</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">chart_width</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chart_height</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">profit_candle_color</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">'#0072B2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_candle_color</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'white'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">marker_size</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_color</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'white'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">candle_spacing</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'35sec'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">width_slider_start</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width_slider_end</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">1400</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">width_slider_step</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width_slider_value</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">height_slider_value</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height_slider_start</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">height_slider_end</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height_slider_step</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">tools</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">'wheel_zoom,pan,box_zoom,reset,save,undo'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">color_segment</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'#787b86'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">y_axis_location</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">toolbar_location</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'above'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">line_width_curr</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                  class="pre">float</span></span><span class="w"> </span><span class="o"><span
+                  class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_color_curr</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'#787b86'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">line_dash_curr</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span
+                  class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span
+                  class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+                  class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">'dashed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizontal_line_dash</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span
+                  class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span
+                  class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+                  class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">[4,</span> <span class="pre">4]</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">horizontal_line_color</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+                  class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">'#2a2e39'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizontal_line_width</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">show_horizontal_line</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                  class="pre">bool</span></span><span class="w"> </span><span class="o"><span
+                  class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span
+                  class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span
+                  class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">start_date_picker_title</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'Начальная</span> <span class="pre">дата'</span></span></em>,
+              <em class="sig-param"><span class="n"><span class="pre">end_date_picker_title</span></span><span
+                      class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                      class="pre">str</span></span><span class="w"> </span><span class="o"><span
+                      class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Конечная</span> <span
+                      class="pre">дата'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_location</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'top_right'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_title</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span
+                  class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span
+                  class="pre">None</span></span><span class="w"> </span><span class="o"><span
+                  class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_title_text_font_style</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'italic'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_title_text_font_size</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'10px'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_label_text_color</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'#b2b5be'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_label_text_font</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'Helvetica'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_label_text_font_style</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'normal'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_label_text_font_size</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'12px'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_background_fill_color</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'#181c27'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_border_line_color</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'#2a2e39'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">legend_border_line_width</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                  class="pre">float</span></span><span class="w"> </span><span class="o"><span
+                  class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_border_line_alpha</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span
+                  class="pre">legend_background_fill_alpha</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                  class="pre">float</span></span><span class="w"> </span><span class="o"><span
+                  class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+                  class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_text_color</span></span><span
+                  class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'#b2b5be'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">marker_legend_label_buy</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'buy_signal'</span></span></em>, <em class="sig-param"><span
+                  class="n"><span class="pre">marker_legend_label_sell</span></span><span class="p"><span
+                  class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span
+                  class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+                  class="default_value"><span class="pre">'sell_signal'</span></span></em><span
+                  class="sig-paren">)</span> <span class="sig-return"><span
+                  class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span
+                  class="pre">figure</span></span></span><a class="reference internal"
+                                                            href="../_modules/bokehs.html#plot_trading_signals"><span
+                  class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a
+                  class="headerlink" href="#bokehs.plot_trading_signals" title="Link to this definition"></a></dt>
+          <dd><p>Создает интерактивный график с торговыми сигналами на основе данных свечей и информации о позициях.</p>
+              <dl class="field-list simple">
+                  <dt class="field-odd">Параметры<span class="colon">:</span></dt>
+                  <dd class="field-odd">
+                      <ul class="simple">
+                          <li><p><strong>df</strong> (<em>pd.DataFrame</em>) – DataFrame с данными свечей. Должен
+                              содержать столбцы „datetime“, „open“, „high“, „low“, „close“.</p></li>
+                          <li><p><strong>positions_df</strong>
+                              (<em>Optional</em><em>[</em><em>pd.DataFrame</em><em>]</em>) – DataFrame с информацией о
+                              позициях. Должен содержать столбцы „open_position_timestamp“, „close_position_timestamp“,
+                              „stop_loss“. По умолчанию None.</p></li>
+                          <li><p><strong>open_position_timestamps</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>)
+                              – Список временных меток открытия позиций. По умолчанию None.</p></li>
+                          <li><p><strong>close_position_timestamps</strong>
+                              (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) –
+                              Список временных меток закрытия позиций. По умолчанию None.</p></li>
+                          <li><p><strong>stop_losses</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em>)
+                              – Список стоп-лоссов для каждой сделки. По умолчанию None.</p></li>
+                          <li><p><strong>distance_buy</strong> (<em>int</em>) – Дистанция от свечи для маркеров покупок.
+                              По умолчанию 5.</p></li>
+                          <li><p><strong>distance_sell</strong> (<em>int</em>) – Дистанция от свечи для маркеров продаж.
+                              По умолчанию 5.</p></li>
+                          <li><p><strong>marker_buy_color</strong> (<em>str</em>) – Цвет маркеров покупок. По умолчанию
+                              „blue“.</p></li>
+                          <li><p><strong>marker_sell_color</strong> (<em>str</em>) – Цвет маркеров продаж. По умолчанию
+                              „green“.</p></li>
+                          <li><p><strong>marker_sell_stop_color</strong> (<em>str</em>) – Цвет маркеров продаж при
+                              срабатывании стоп-лосса. По умолчанию „red“.</p></li>
+                          <li><p><strong>buy_marker</strong> (<em>str</em>) – Форма маркеров покупок. По умолчанию
+                              „triangle“.</p></li>
+                          <li><p><strong>sell_marker</strong> (<em>str</em>) – Форма маркеров продаж. По умолчанию
+                              „inverted_triangle“.</p></li>
+                          <li><p><strong>chart_width</strong> (<em>int</em>) – Ширина графика. По умолчанию 1000.</p>
+                          </li>
+                          <li><p><strong>chart_height</strong> (<em>int</em>) – Высота графика. По умолчанию 400.</p>
+                          </li>
+                          <li><p><strong>profit_candle_color</strong> (<em>str</em>) – Цвет свечей при возрастании цены.
+                              По умолчанию „#0072B2“.</p></li>
+                          <li><p><strong>loss_candle_color</strong> (<em>str</em>) – Цвет свечей при убытке цены. По
+                              умолчанию „white“.</p></li>
+                          <li><p><strong>marker_size</strong> (<em>int</em>) – Размер маркеров. По умолчанию 10.</p>
+                          </li>
+                          <li><p><strong>labels_color</strong> (<em>str</em>) – Цвет меток. По умолчанию „white“.</p>
+                          </li>
+                          <li><p><strong>candle_spacing</strong> (<em>str</em>) – Расстояние между свечами. По умолчанию
+                              „35sec“.</p></li>
+                          <li><p><strong>width_slider_start</strong> (<em>int</em>) – Начальное значение ширины графика
+                              в виджете Slider. По умолчанию 200.</p></li>
+                          <li><p><strong>width_slider_end</strong> (<em>int</em>) – Конечное значение ширины графика в
+                              виджете Slider. По умолчанию 1400.</p></li>
+                          <li><p><strong>width_slider_step</strong> (<em>int</em>) – Шаг изменения ширины графика в
+                              виджете Slider. По умолчанию 10.</p></li>
+                          <li><p><strong>width_slider_value</strong> (<em>int</em>) – Значение по умолчанию для ширины
+                              графика в виджете Slider. По умолчанию 400.</p></li>
+                          <li><p><strong>height_slider_value</strong> (<em>int</em>) – Значение по умолчанию для высоты
+                              графика в виджете Slider. По умолчанию 300.</p></li>
+                          <li><p><strong>height_slider_start</strong> (<em>int</em>) – Начальное значение высоты графика
+                              в виджете Slider. По умолчанию 200.</p></li>
+                          <li><p><strong>height_slider_end</strong> (<em>int</em>) – Конечное значение высоты графика в
+                              виджете Slider. По умолчанию 600.</p></li>
+                          <li><p><strong>height_slider_step</strong> (<em>int</em>) – Шаг изменения высоты графика в
+                              виджете Slider. По умолчанию 10.</p></li>
+                          <li><p><strong>tools</strong> (<em>str</em>) – Набор инструментов для графика. По умолчанию
+                              «wheel_zoom,pan,box_zoom,reset,save,undo».</p></li>
+                          <li><p><strong>color_segment</strong> (<em>str</em>) – Цвет усиков свечей. По умолчанию
+                              „#787b86“.</p></li>
+                          <li><p><strong>y_axis_location</strong> (<em>str</em>) – Расположение оси y. По умолчанию
+                              „right“.</p></li>
+                          <li><p><strong>toolbar_location</strong> (<em>str</em>) – Расположение набора инструментов. По
+                              умолчанию „above“.</p></li>
+                          <li><p><strong>line_width_curr</strong> (<em>float</em>) – Ширина указательной линии. По
+                              умолчанию 0.5.</p></li>
+                          <li><p><strong>line_color_curr</strong> (<em>str</em>) – Цвет указательной линии. По умолчанию
+                              „#787b86“.</p></li>
+                          <li><p><strong>line_dash_curr</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>)
+                              – Стиль линии. По умолчанию „dashed“.</p></li>
+                          <li><p><strong>horizontal_line_dash</strong>
+                              (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>)
+                              – Стиль горизонтальной линии. По умолчанию [4, 4].</p></li>
+                          <li><p><strong>horizontal_line_color</strong> (<em>str</em>) – Цвет горизонтальной линии. По
+                              умолчанию „#2a2e39“.</p></li>
+                          <li><p><strong>horizontal_line_width</strong> (<em>float</em>) – Ширина горизонтальной линии.
+                              По умолчанию 1.</p></li>
+                          <li><p><strong>show_horizontal_line</strong> (<em>bool</em>) – Показывать ли горизонтальную
+                              линию. По умолчанию True.</p></li>
+                          <li><p><strong>title</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Заголовок
+                              графика. По умолчанию None.</p></li>
+                          <li><p><strong>start_date_picker_title</strong> (<em>str</em>) – Название кнопки для выбора
+                              начальной даты. По умолчанию „Начальная дата“.</p></li>
+                          <li><p><strong>end_date_picker_title</strong> (<em>str</em>) – Название кнопки для выбора
+                              конечной даты. По умолчанию „Конечная дата“.</p></li>
+                          <li><p><strong>legend_location</strong> (<em>str</em>) – Расположение легенды. По умолчанию
+                              „top_right“.</p></li>
+                          <li><p><strong>legend_title</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) –
+                              Заголовок легенды. По умолчанию None.</p></li>
+                          <li><p><strong>legend_title_text_font_style</strong> (<em>str</em>) – Стиль шрифта заголовка
+                              легенды. По умолчанию «italic».</p></li>
+                          <li><p><strong>legend_title_text_font_size</strong> (<em>str</em>) – Размер шрифта заголовка
+                              легенды. По умолчанию «10px».</p></li>
+                          <li><p><strong>legend_label_text_color</strong> (<em>str</em>) – Цвет меток легенды. По
+                              умолчанию «#b2b5be».</p></li>
+                          <li><p><strong>legend_label_text_font</strong> (<em>str</em>) – Шрифт меток легенды. По
+                              умолчанию «Helvetica».</p></li>
+                          <li><p><strong>legend_label_text_font_style</strong> (<em>str</em>) – Стиль шрифта меток
+                              легенды. По умолчанию «normal».</p></li>
+                          <li><p><strong>legend_label_text_font_size</strong> (<em>str</em>) – Размер шрифта меток
+                              легенды. По умолчанию «12px».</p></li>
+                          <li><p><strong>legend_background_fill_color</strong> (<em>str</em>) – Цвет фона легенды. По
+                              умолчанию „#181c27“.</p></li>
+                          <li><p><strong>legend_border_line_color</strong> (<em>str</em>) – Цвет границы легенды. По
+                              умолчанию „#2a2e39“.</p></li>
+                          <li><p><strong>legend_border_line_width</strong> (<em>float</em>) – Ширина границы легенды. По
+                              умолчанию 1.</p></li>
+                          <li><p><strong>legend_border_line_alpha</strong> (<em>float</em>) – Прозрачность границы
+                              легенды. По умолчанию 0.5.</p></li>
+                          <li><p><strong>legend_background_fill_alpha</strong> (<em>float</em>) – Прозрачность фона
+                              легенды. По умолчанию 0.5.</p></li>
+                          <li><p><strong>title_text_color</strong> (<em>str</em>) – Цвет заголовка. По умолчанию
+                              „#b2b5be“.</p></li>
+                          <li><p><strong>marker_legend_label_buy</strong> (<em>str</em>) – Название маркера покупки в
+                              легенде. По умолчанию „buy_signal“.</p></li>
+                          <li><p><strong>marker_legend_label_sell</strong> (<em>str</em>) – Название маркера продажи в
+                              легенде. По умолчанию „sell_signal“.</p></li>
+                      </ul>
+                  </dd>
+                  <dt class="field-even">Результат<span class="colon">:</span></dt>
+                  <dd class="field-even"><p>Объект Bokeh figure с интерактивным графиком торговых сигналов.</p>
+                  </dd>
+                  <dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+                  <dd class="field-odd"><p>figure</p>
+                  </dd>
+                  <dt class="field-even">Исключение<span class="colon">:</span></dt>
+                  <dd class="field-even">
+                      <ul class="simple">
+                          <li><p><strong>ValueError</strong> – Если не предоставлены необходимые данные о позициях
+                              (positions_df или open_position_timestamps, close_position_timestamps, stop_losses).</p>
+                          </li>
+                          <li><p><strong>KeyError</strong> – Если в df отсутствуют необходимые столбцы („datetime“,
+                              „open“, „high“, „low“, „close“).</p></li>
+                      </ul>
+                  </dd>
+              </dl>
+              <div class="admonition note">
+                  <p class="admonition-title">Примечание</p>
+                  <p>Эта функция создает сложный интерактивный график с использованием библиотеки Bokeh.
+                      График включает свечной график, маркеры сигналов покупки и продажи, а также различные
+                      настройки внешнего вида и интерактивности. Пользователь может настроить практически
+                      все аспекты графика, включая цвета, размеры, стили и расположение элементов.</p>
+              </div>
+          </dd>
+      </dl>
+
 <p>Этот раздел содержит подробное описание всех функций, реализованных в проекте.</p>
 </section>
 
