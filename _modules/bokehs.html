@@ -50,6 +50,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. Введение</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. Использование библиотеки</a></li>
+    <li class="toctree-l1"><a class="reference internal" href="../api_reference/index.html">3. Справочник API</a>
+        <ul>
+            <li class="toctree-l2"><a class="reference internal" href="../api_reference/functions_overview.html">3.1.
+                Обзор функций</a></li>
+            <li class="toctree-l2"><a class="reference internal" href="../api_reference/bokehs1.html">3.2. Модуль
+                bokehs</a></li>
+        </ul>
+    </li>
 </ul>
 
         </div>
@@ -87,18 +95,15 @@
 <span class="sd">- style_plot: Настройка стиля графика</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span
+                   class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span
+                   class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span
+                   class="p">,</span> <span class="n">Any</span>
 
-
-
-<span class="kn">import</span> <span class="nn">bokeh.plotting</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">ColumnDataSource</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">Span</span><span class="p">,</span> <span class="n">LabelSet</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Slider</span><span class="p">,</span> <span class="n">DatePicker</span><span class="p">,</span> <span class="n">Toggle</span><span class="p">,</span> <span class="n">CrosshairTool</span><span class="p">,</span> <span class="n">FreehandDrawTool</span>
-<span class="kn">from</span> <span class="nn">bokeh.layouts</span> <span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">row</span>
-<span class="kn">from</span> <span class="nn">bokeh.models.formatters</span> <span class="kn">import</span> <span class="n">DatetimeTickFormatter</span>
-<span class="kn">from</span> <span class="nn">bokeh.models.callbacks</span> <span class="kn">import</span> <span class="n">CustomJS</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span
+                   class="p">,</span> <span class="n">ColumnDataSource</span>
 
 
 <div class="viewcode-block" id="customize_plot_styles">
@@ -218,49 +223,91 @@
 
 <div class="viewcode-block" id="process_positions">
 <a class="viewcode-back" href="../api_reference/bokehs1.html#bokehs.process_positions">[документация]</a>
-<span class="k">def</span> <span class="nf">process_positions</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
-                      <span class="n">positions_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                      <span class="n">open_position_timestamps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                      <span class="n">close_position_timestamps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                      <span class="n">stop_losses</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                      <span class="n">marker_sell_stop_color</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
-                      <span class="n">marker_sell_color</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">process_positions</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span
+        class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">positions_df</span><span class="p">:</span> <span class="n">Optional</span><span
+        class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span
+        class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">open_position_timestamps</span><span class="p">:</span> <span class="n">Optional</span><span
+        class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span
+        class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">close_position_timestamps</span><span class="p">:</span> <span class="n">Optional</span><span
+        class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span
+        class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_losses</span><span class="p">:</span> <span class="n">Optional</span><span
+        class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span
+        class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">marker_sell_stop_color</span><span class="p">:</span> <span class="nb">str</span> <span
+        class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+        <span class="n">marker_sell_color</span><span class="p">:</span> <span class="nb">str</span> <span
+        class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span>
+    <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span
+        class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span
+        class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span
+        class="nb">str</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span
+        class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span
+        class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span
+        class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span
+        class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span
+        class="nb">float</span><span class="p">]]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. :no-index:</span>
 
-<span class="sd">    Функция для обработки позиций и создания источников данных для графиков.</span>
+<span class="sd">    Обрабатывает позиции и создает источники данных для графиков.</span>
 
-<span class="sd">    :param df: Датафрейм с данными.</span>
-<span class="sd">    :type df: pandas.DataFrame</span>
-<span class="sd">    :param positions_df: Датафрейм с позициями.</span>
-<span class="sd">    :type positions_df: Optional[pandas.DataFrame]</span>
-<span class="sd">    :param open_position_timestamps: Список временных меток открытия позиций.</span>
-<span class="sd">    :type open_position_timestamps: Optional[List[int]]</span>
-<span class="sd">    :param close_position_timestamps: Список временных меток закрытия позиций.</span>
-<span class="sd">    :type close_position_timestamps: Optional[List[int]]</span>
-<span class="sd">    :param stop_losses: Список стоп-лоссов.</span>
-<span class="sd">    :type stop_losses: Optional[List[float]]</span>
-<span class="sd">    :param marker_sell_stop_color: Цвет маркера для позиций с достижением стоп-лосса.</span>
-<span class="sd">    :type marker_sell_stop_color: str</span>
-<span class="sd">    :param marker_sell_color: Цвет маркера для обычных позиций.</span>
-<span class="sd">    :type marker_sell_color: str</span>
-<span class="sd">    :return: Кортеж с индексами покупок, продаж и другой информацией по позициям.</span>
-<span class="sd">    :rtype: tuple(List[int], List[tuple], List[int], List[float], List[float], List[float])</span>
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): Датафрейм с данными.</span>
+<span class="sd">        positions_df (Optional[pd.DataFrame]): Датафрейм с позициями. По умолчанию None.</span>
+<span class="sd">        open_position_timestamps (Optional[List[int]]): Список временных меток открытия позиций. По умолчанию None.</span>
+<span class="sd">        close_position_timestamps (Optional[List[int]]): Список временных меток закрытия позиций. По умолчанию None.</span>
+<span class="sd">        stop_losses (Optional[List[float]]): Список стоп-лоссов. По умолчанию None.</span>
+<span class="sd">        marker_sell_stop_color (str): Цвет маркера для позиций с достижением стоп-лосса. По умолчанию &#39;red&#39;.</span>
+<span class="sd">        marker_sell_color (str): Цвет маркера для обычных позиций. По умолчанию &#39;green&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple[List[int], List[Tuple[Optional[int], str]], List[int], List[Optional[float]], List[float], List[Optional[float]]]:</span>
+<span class="sd">        Кортеж, содержащий:</span>
+<span class="sd">        - Индексы покупок</span>
+<span class="sd">        - Кортежи с индексами продаж и цветами маркеров</span>
+<span class="sd">        - Количество свечей в сделке</span>
+<span class="sd">        - Процентные изменения</span>
+<span class="sd">        - Цены открытия</span>
+<span class="sd">        - Цены закрытия</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Если не предоставлены необходимые данные о позициях.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">if</span> <span class="n">positions_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">required_position_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;open_position_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;close_position_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_loss&#39;</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">required_position_columns</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">positions_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DataFrame с метками позиций должен содержать столбец &#39;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">open_position_timestamps</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">close_position_timestamps</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">stop_losses</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Необходимо передать либо positions_df, либо списки open_position_timestamps, close_position_timestamps и stop_losses&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">positions_df</span> <span class="ow">is</span> <span
+        class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">arg</span> <span
+        class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">arg</span> <span
+        class="ow">in</span> <span class="p">[</span><span class="n">open_position_timestamps</span><span
+        class="p">,</span> <span class="n">close_position_timestamps</span><span class="p">,</span> <span class="n">stop_losses</span><span
+        class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Необходимо передать либо positions_df, либо все списки: open_position_timestamps, close_position_timestamps и stop_losses&quot;</span><span
+        class="p">)</span>
         <span class="n">positions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
             <span class="s1">&#39;open_position_timestamp&#39;</span><span class="p">:</span> <span class="n">open_position_timestamps</span><span class="p">,</span>
             <span class="s1">&#39;close_position_timestamp&#39;</span><span class="p">:</span> <span class="n">close_position_timestamps</span><span class="p">,</span>
             <span class="s1">&#39;stop_loss&#39;</span><span class="p">:</span> <span class="n">stop_losses</span>
         <span class="p">})</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">required_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;open_position_timestamp&#39;</span><span
+        class="p">,</span> <span class="s1">&#39;close_position_timestamp&#39;</span><span class="p">,</span> <span
+        class="s1">&#39;stop_loss&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span
+        class="n">col</span> <span class="ow">in</span> <span class="n">positions_df</span><span class="o">.</span><span
+        class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span
+        class="n">required_columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span
+        class="sa">f</span><span class="s2">&quot;DataFrame с метками позиций должен содержать столбцы: </span><span
+        class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span
+        class="p">(</span><span class="n">required_columns</span><span class="p">)</span><span class="si">}</span><span
+        class="s2">&quot;</span><span class="p">)</span>
 
     <span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;open_position_timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;open_position_timestamp&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
     <span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;close_position_timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;close_position_timestamp&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
@@ -268,24 +315,42 @@
     <span class="n">indices_buy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;open_position_timestamp&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
     <span class="n">indices_sell</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;close_position_timestamp&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-    <span class="n">num_candles_in_trade</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">adjusted_sell_indices</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">percent_moves</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">open_prices</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">close_prices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">num_candles_in_trade</span><span class="p">:</span> <span class="n">List</span><span
+        class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">adjusted_sell_indices</span><span class="p">:</span> <span class="n">List</span><span
+        class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Optional</span><span
+        class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">str</span><span
+        class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">percent_moves</span><span class="p">:</span> <span class="n">List</span><span
+        class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span
+        class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">open_prices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span
+        class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">close_prices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span
+        class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span
+        class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">buy_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">indices_buy</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices_sell</span><span class="p">):</span>
             <span class="n">sell_idx</span> <span class="o">=</span> <span class="n">indices_sell</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="n">stop_loss</span> <span class="o">=</span> <span class="n">positions_df</span><span class="p">[</span><span class="s1">&#39;stop_loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
             <span class="k">if</span> <span class="n">stop_loss</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">stop_loss_hit</span> <span class="o">=</span> <span class="kc">False</span>
-                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">buy_idx</span><span class="p">,</span> <span class="n">sell_idx</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">stop_loss</span><span class="p">:</span>
-                        <span class="n">sell_idx</span> <span class="o">=</span> <span class="n">j</span>
-                        <span class="n">stop_loss_hit</span> <span class="o">=</span> <span class="kc">True</span>
-                        <span class="k">break</span>
+                <span class="n">stop_loss_hit</span> <span class="o">=</span> <span class="nb">any</span><span
+        class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span
+        class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span
+        class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">stop_loss</span> <span
+        class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="n">buy_idx</span><span class="p">,</span> <span class="n">sell_idx</span><span
+        class="p">))</span>
                 <span class="k">if</span> <span class="n">stop_loss_hit</span><span class="p">:</span>
+                    <span class="n">sell_idx</span> <span class="o">=</span> <span class="nb">next</span><span
+        class="p">(</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span
+        class="nb">range</span><span class="p">(</span><span class="n">buy_idx</span><span class="p">,</span> <span
+        class="n">sell_idx</span><span class="p">)</span> <span class="k">if</span> <span class="n">df</span><span
+        class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">]</span><span class="o">.</span><span
+        class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span
+        class="n">stop_loss</span><span class="p">)</span>
                     <span class="n">color</span> <span class="o">=</span> <span class="n">marker_sell_stop_color</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">color</span> <span class="o">=</span> <span class="n">marker_sell_color</span>
