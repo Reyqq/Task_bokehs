@@ -164,25 +164,101 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="bokehs.process_positions">
-<span class="sig-prename descclassname"><span class="pre">bokehs.</span></span><span class="sig-name descname"><span class="pre">process_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positions_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_position_timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close_position_timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_losses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_sell_stop_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'red'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_sell_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'green'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bokehs.html#process_positions"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#bokehs.process_positions" title="Link to this definition"></a></dt>
-<dd><p>Функция для обработки позиций и создания источников данных для графиков.</p>
+    <span class="sig-prename descclassname"><span class="pre">bokehs.</span></span><span class="sig-name descname"><span
+        class="pre">process_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span
+        class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span
+        class="n"><span class="pre">positions_df</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span
+        class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+        class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+        class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span
+        class="pre">open_position_timestamps</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+        class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span
+        class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+        class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+        class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span
+        class="pre">close_position_timestamps</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+        class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span
+        class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+        class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+        class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span
+        class="pre">stop_losses</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+        class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span
+        class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span
+        class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span
+        class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span
+        class="pre">marker_sell_stop_color</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+        class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+        class="pre">'red'</span></span></em>, <em class="sig-param"><span class="n"><span
+        class="pre">marker_sell_color</span></span><span class="p"><span class="pre">:</span></span><span
+        class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span
+        class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span
+        class="pre">'green'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span
+        class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span
+        class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span
+        class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span
+        class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span
+        class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span
+        class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span
+        class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span
+        class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span
+        class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span
+        class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+        class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span
+        class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span
+        class="pre">[</span></span><span class="pre">float</span><span class="w"> </span><span class="p"><span
+        class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span
+        class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span
+        class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span
+        class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span
+        class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span
+        class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span
+        class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span
+        class="pre">]</span></span></span></span><a class="reference internal"
+                                                    href="../_modules/bokehs.html#process_positions"><span
+        class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a
+        class="headerlink" href="#bokehs.process_positions" title="Link to this definition"></a></dt>
+    <dd><p>Обрабатывает позиции и создает источники данных для графиков.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Параметры<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – Датафрейм с данными.</p></li>
-<li><p><strong>positions_df</strong> (<em>Optional</em><em>[</em><em>pandas.DataFrame</em><em>]</em>) – Датафрейм с позициями.</p></li>
-<li><p><strong>open_position_timestamps</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Список временных меток открытия позиций.</p></li>
-<li><p><strong>close_position_timestamps</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Список временных меток закрытия позиций.</p></li>
-<li><p><strong>stop_losses</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Список стоп-лоссов.</p></li>
-<li><p><strong>marker_sell_stop_color</strong> (<em>str</em>) – Цвет маркера для позиций с достижением стоп-лосса.</p></li>
-<li><p><strong>marker_sell_color</strong> (<em>str</em>) – Цвет маркера для обычных позиций.</p></li>
+    <li><p><strong>df</strong> (<em>pd.DataFrame</em>) – Датафрейм с данными.</p></li>
+    <li><p><strong>positions_df</strong> (<em>Optional</em><em>[</em><em>pd.DataFrame</em><em>]</em>) – Датафрейм с
+        позициями. По умолчанию None.</p></li>
+    <li><p><strong>open_position_timestamps</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>)
+        – Список временных меток открытия позиций. По умолчанию None.</p></li>
+    <li><p><strong>close_position_timestamps</strong>
+        (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Список временных меток
+        закрытия позиций. По умолчанию None.</p></li>
+    <li><p><strong>stop_losses</strong>
+        (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Список стоп-лоссов. По
+        умолчанию None.</p></li>
+    <li><p><strong>marker_sell_stop_color</strong> (<em>str</em>) – Цвет маркера для позиций с достижением стоп-лосса.
+        По умолчанию „red“.</p></li>
+    <li><p><strong>marker_sell_color</strong> (<em>str</em>) – Цвет маркера для обычных позиций. По умолчанию „green“.
+    </p></li>
 </ul>
 </dd>
 <dt class="field-even">Результат<span class="colon">:</span></dt>
-<dd class="field-even"><p>Кортеж с индексами покупок, продаж и другой информацией по позициям.</p>
+    <dd class="field-even"><p>Кортеж, содержащий:
+        - Индексы покупок
+        - Кортежи с индексами продаж и цветами маркеров
+        - Количество свечей в сделке
+        - Процентные изменения
+        - Цены открытия
+        - Цены закрытия</p>
 </dd>
 <dt class="field-odd">Тип результата<span class="colon">:</span></dt>
-<dd class="field-odd"><p>tuple(List[int], List[tuple], List[int], List[float], List[float], List[float])</p>
+    <dd class="field-odd"><p>Tuple[List[int], List[Tuple[Optional[int], str]], List[int], List[Optional[float]],
+        List[float], List[Optional[float]]]</p>
+    </dd>
+    <dt class="field-even">Исключение<span class="colon">:</span></dt>
+    <dd class="field-even"><p><strong>ValueError</strong> – Если не предоставлены необходимые данные о позициях.</p>
 </dd>
 </dl>
 </dd></dl>
