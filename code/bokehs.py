@@ -17,7 +17,6 @@ from bokeh.plotting import figure, ColumnDataSource
 
 def customize_plot_styles(p: figure) -> None:
     """
-    .. :no-index:
 
 
     Настраивает стили графика Bokeh для улучшения его внешнего вида.
@@ -76,7 +75,6 @@ def customize_plot_styles(p: figure) -> None:
 
 def create_data_sources(df: pd.DataFrame) -> Tuple[pd.DataFrame, ColumnDataSource, ColumnDataSource, ColumnDataSource]:
     """
-    .. :no-index:
 
 
     Создает источники данных для графиков свечей.
@@ -135,7 +133,6 @@ def process_positions(
 ) -> Tuple[
     List[int], List[Tuple[Optional[int], str]], List[int], List[Optional[float]], List[float], List[Optional[float]]]:
     """
-    .. :no-index:
 
 
     Обрабатывает позиции и создает источники данных для графиков.
