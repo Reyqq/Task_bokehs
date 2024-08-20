@@ -73,5 +73,13 @@ sphinx-autobuild docs/source docs/build/html
 
 Документацию по коду с помощью sphinx можно посмотреть здесь: https://reyqq.github.io/Task_bokehs/
 
+## Примеры использования
 
+В папке `example/` вы найдете Jupyter notebooks с демонстрацией использования функций этого проекта:
+
+- `example1.ipynb`: Базовое использование функции `customize_plot_styles`
+- `example2.ipynb`: Работа с `create_data_sources` и визуализация данных
+- `example3.ipynb`: Полный пример использования `process_positions`
+
+Для запуска примеров, откройте соответствующий notebook в Google Colab или локально в Jupyter.
 
