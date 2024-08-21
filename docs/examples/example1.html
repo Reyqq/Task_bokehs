@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3.1. Обзор функций &#8212; документация Bokeh_task 2.0</title>
+    <title>4.1. Пример 1 &#8212; документация Bokeh_task 2.0</title>
   
   
   
@@ -45,11 +45,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api_reference/functions_overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/example1';</script>
     <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
     <link rel="search" title="Поиск" href="../search.html" />
-    <link rel="next" title="3.2. Модуль bokehs" href="bokehs1.html" />
-    <link rel="prev" title="3. Справочник API" href="index.html" />
+    <link rel="prev" title="4. Примеры" href="../examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ru"/>
   </head>
@@ -159,14 +158,14 @@
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api_reference/index.html">
     Справочник API
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../examples.html">
     Примеры
   </a>
@@ -286,14 +285,14 @@ document.write(`
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api_reference/index.html">
     Справочник API
   </a>
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../examples.html">
     Примеры
   </a>
@@ -346,9 +345,9 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="В этом разделе">
   <p class="bd-links__title" role="heading" aria-level="1">В этом разделе</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3.1. Обзор функций</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bokehs1.html">3.2. Модуль bokehs</a></li>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Примеры использования</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4.1. Пример 1</a></li>
 </ul>
 </div>
 </nav></div>
@@ -387,7 +386,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link"><span class="section-number">3. </span>Справочник API</a></li>
+    <li class="breadcrumb-item"><a href="../examples.html" class="nav-link"><span class="section-number">4. </span>Примеры</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span...</li>
   </ul>
@@ -406,17 +405,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="functions-overview">
-<span id="id1"></span><h1><span class="section-number">3.1. </span>Обзор функций<a class="headerlink" href="#functions-overview" title="Permalink to this heading">#</a></h1>
-<p>В этом разделе представлен краткий обзор основных функций, используемых в проекте.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="bokehs1.html#bokehs.customize_plot_styles" title="bokehs.customize_plot_styles"><code class="xref py py-func docutils literal notranslate"><span class="pre">customize_plot_styles(p:</span> <span class="pre">Figure)</span></code></a>: Настраивает стили графиков, такие как линии, цвета и легенды.</p></li>
-<li><p><a class="reference internal" href="bokehs1.html#bokehs.create_data_sources" title="bokehs.create_data_sources"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_data_sources(df:</span> <span class="pre">pd.DataFrame)</span></code></a>: Создает источники данных для графиков на основе предоставленного DataFrame.</p></li>
-<li><p><a class="reference internal" href="bokehs1.html#bokehs.process_positions" title="bokehs.process_positions"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_positions(df:</span> <span class="pre">pd.DataFrame,</span> <span class="pre">positions_df:</span> <span class="pre">Optional[pd.DataFrame]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">...)</span></code></a>: Обрабатывает и визуализирует позиции на графике, включая покупку и продажу, а также добавляет маркеры.</p></li>
-<li><p><a class="reference internal" href="bokehs1.html#bokehs.create_markers_data" title="bokehs.create_markers_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_markers_data(df:</span> <span class="pre">pd.DataFrame,indices_buy:</span> <span class="pre">List[int],</span> <span class="pre">...)</span></code></a>: Создает данные для маркеров покупок и продаж на графике.</p></li>
-<li><p><a class="reference internal" href="bokehs1.html#bokehs.plot_trading_signals" title="bokehs.plot_trading_signals"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_trading_signals(df:</span> <span class="pre">pd.DataFrame,positions_df:</span> <span class="pre">Optional[pd.DataFrame]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">...)</span></code></a>: Создает интерактивный график с торговыми сигналами на основе данных свечей и информации о позициях.</p></li>
-</ul>
-<p>Подробное описание каждой функции вы найдете в разделе «<a class="reference internal" href="index.html#api"><span class="std std-ref">Справочник API</span></a>».</p>
+  <section id="id1">
+<h1><span class="section-number">4.1. </span>Пример 1<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Ниже приведен пример использования функции:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1"># Добавляем путь к папке code в системный путь Python</span>
+<span class="linenos"> 6</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">)))</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># Теперь можно импортировать функции из bokehs.py</span>
+<span class="linenos"> 9</span><span class="kn">from</span> <span class="nn">bokehs</span> <span class="kn">import</span> <span class="n">plot_trading_signals</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="c1"># Здесь вы можете использовать импортированные функции</span>
+<span class="linenos">12</span><span class="c1"># Пример использования функции</span>
+<span class="linenos">13</span><span class="n">open_timestamps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1577103060</span><span class="p">,</span> <span class="mi">1577104980</span><span class="p">,</span> <span class="mi">1577107680</span><span class="p">]</span>
+<span class="linenos">14</span><span class="n">close_timestamps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1577104020</span><span class="p">,</span> <span class="mi">1577105820</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="linenos">15</span><span class="n">stop_losses</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7543</span><span class="p">,</span> <span class="mi">7541</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="c1"># Загрузка данных</span>
+<span class="linenos">18</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/Vlados_work/draft/base_data.parquet&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="c1"># Переименование столбцов</span>
+<span class="linenos">21</span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;open_futures&#39;</span><span class="p">:</span> <span class="s1">&#39;open&#39;</span><span class="p">,</span>
+<span class="linenos">22</span>                   <span class="s1">&#39;high_futures&#39;</span><span class="p">:</span> <span class="s1">&#39;high&#39;</span><span class="p">,</span>
+<span class="linenos">23</span>                   <span class="s1">&#39;low_futures&#39;</span><span class="p">:</span> <span class="s1">&#39;low&#39;</span><span class="p">,</span>
+<span class="linenos">24</span>                   <span class="s1">&#39;close_futures&#39;</span><span class="p">:</span> <span class="s1">&#39;close&#39;</span><span class="p">,</span>
+<span class="linenos">25</span>                   <span class="s1">&#39;first_volume_futures&#39;</span><span class="p">:</span> <span class="s1">&#39;volume&#39;</span><span class="p">,</span>
+<span class="linenos">26</span>                   <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime&#39;</span><span class="p">},</span>
+<span class="linenos">27</span>                   <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="c1"># Преобразование столбца &#39;datetime&#39; в тип данных datetime</span>
+<span class="linenos">30</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="c1"># Предполагается, что `df` уже создан и содержит необходимые данные</span>
+<span class="linenos">37</span><span class="n">plot_trading_signals</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">open_position_timestamps</span><span class="o">=</span><span class="n">open_timestamps</span><span class="p">,</span> <span class="n">close_position_timestamps</span><span class="o">=</span><span class="n">close_timestamps</span><span class="p">,</span> <span class="n">stop_losses</span><span class="o">=</span><span class="n">stop_losses</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -430,22 +460,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="../examples.html"
        title="предыдущая страница">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">назад</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Справочник API</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Примеры</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="bokehs1.html"
-       title="следующая страница">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">вперёд</p>
-        <p class="prev-next-title"><span class="section-number">3.2. </span>Модуль bokehs</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -461,7 +482,7 @@ document.write(`
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/Reyqq/Task_bokehs/edit/master/docs/source/api_reference/functions_overview.rst">
+    <a href="https://github.com/Reyqq/Task_bokehs/edit/master/docs/source/examples/example1.rst">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -476,7 +497,7 @@ document.write(`
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/api_reference/functions_overview.rst.txt">
+    <a href="../_sources/examples/example1.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Исходный текст
     </a>
   </div>

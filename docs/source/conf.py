@@ -1,11 +1,3 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 import os
 import sys
 import bokeh
@@ -23,13 +15,9 @@ copyright = '2024, Yura'
 author = 'Yura'
 release = '2.0'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-import sphinx_rtd_theme
+import pydata_sphinx_theme
 
 extensions = [
-    'sphinx_rtd_theme',
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
@@ -51,21 +39,40 @@ exclude_patterns = []
 
 language = 'ru'
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
-    'logo_only': False,
-    'collapse_navigation': False,
-    'sticky_navigation': True,
-    'includehidden': True,
-    'navigation_depth': 4,
-    'titles_only': False,
-    'style_nav_header_background': '#343131',
+    "logo": {
+        "image_light": "image/saitama.png",
+        "image_dark": "image/saitama.png",
+    },
+    "navbar_align": "left",
+    "navigation_depth": 4,
+    "show_toc_level": 2,
+    "footer_start": ["copyright"],
+    "footer_end": ["sphinx-version", "theme-version"],
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/Reyqq/Task_bokehs",
+            "icon": "fab fa-github-square",
+        },
+    ],
+    "use_edit_page_button": True,
+    "show_nav_level": 2,
+    "collapse_navigation": False,
+}
+
+
+
+html_context = {
+    "github_user": "Reyqq",
+    "github_repo": "Task_bokehs",
+    "github_version": "master",
+    "doc_path": "docs/source/",
 }
 
 master_doc = 'index'
 
-html_static_path = ['_static']
+html_static_path = ['source/_static']

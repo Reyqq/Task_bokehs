@@ -29,6 +29,7 @@ Overview
    introduction
    usage
    api_reference/index
+   examples
 
 
 
